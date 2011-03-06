@@ -92,6 +92,11 @@ namespace HomeBank {
 		void InitializeComponent(void)
 		{
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->ファイルToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->開くOToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->上書き保存SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->名前をつけて保存AToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->閉じるCToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->dateCalendar = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -104,11 +109,6 @@ namespace HomeBank {
 			this->buttonDelete = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textSum = (gcnew System::Windows::Forms::TextBox());
-			this->ファイルToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->開くOToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->上書き保存SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->名前をつけて保存AToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->閉じるCToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -120,6 +120,39 @@ namespace HomeBank {
 			this->menuStrip1->Size = System::Drawing::Size(778, 26);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// ファイルToolStripMenuItem
+			// 
+			this->ファイルToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {this->開くOToolStripMenuItem, 
+				this->上書き保存SToolStripMenuItem, this->名前をつけて保存AToolStripMenuItem, this->閉じるCToolStripMenuItem});
+			this->ファイルToolStripMenuItem->Name = L"ファイルToolStripMenuItem";
+			this->ファイルToolStripMenuItem->Size = System::Drawing::Size(85, 22);
+			this->ファイルToolStripMenuItem->Text = L"ファイル(&F)";
+			this->ファイルToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::ファイルToolStripMenuItem_Click);
+			// 
+			// 開くOToolStripMenuItem
+			// 
+			this->開くOToolStripMenuItem->Name = L"開くOToolStripMenuItem";
+			this->開くOToolStripMenuItem->Size = System::Drawing::Size(190, 22);
+			this->開くOToolStripMenuItem->Text = L"開く(&O)";
+			// 
+			// 上書き保存SToolStripMenuItem
+			// 
+			this->上書き保存SToolStripMenuItem->Name = L"上書き保存SToolStripMenuItem";
+			this->上書き保存SToolStripMenuItem->Size = System::Drawing::Size(190, 22);
+			this->上書き保存SToolStripMenuItem->Text = L"上書き保存(&S)";
+			// 
+			// 名前をつけて保存AToolStripMenuItem
+			// 
+			this->名前をつけて保存AToolStripMenuItem->Name = L"名前をつけて保存AToolStripMenuItem";
+			this->名前をつけて保存AToolStripMenuItem->Size = System::Drawing::Size(190, 22);
+			this->名前をつけて保存AToolStripMenuItem->Text = L"名前をつけて保存(&A)";
+			// 
+			// 閉じるCToolStripMenuItem
+			// 
+			this->閉じるCToolStripMenuItem->Name = L"閉じるCToolStripMenuItem";
+			this->閉じるCToolStripMenuItem->Size = System::Drawing::Size(190, 22);
+			this->閉じるCToolStripMenuItem->Text = L"閉じる(&C)";
 			// 
 			// dateCalendar
 			// 
@@ -174,6 +207,7 @@ namespace HomeBank {
 			// comboKind
 			// 
 			this->comboKind->FormattingEnabled = true;
+			this->comboKind->Items->AddRange(gcnew cli::array< System::Object^  >(4) {L"食費", L"本代", L"遊び", L"交通費"});
 			this->comboKind->Location = System::Drawing::Point(67, 85);
 			this->comboKind->Name = L"comboKind";
 			this->comboKind->Size = System::Drawing::Size(145, 20);
@@ -220,39 +254,6 @@ namespace HomeBank {
 			this->textSum->Size = System::Drawing::Size(100, 19);
 			this->textSum->TabIndex = 11;
 			this->textSum->TextChanged += gcnew System::EventHandler(this, &Form1::textBox3_TextChanged);
-			// 
-			// ファイルToolStripMenuItem
-			// 
-			this->ファイルToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {this->開くOToolStripMenuItem, 
-				this->上書き保存SToolStripMenuItem, this->名前をつけて保存AToolStripMenuItem, this->閉じるCToolStripMenuItem});
-			this->ファイルToolStripMenuItem->Name = L"ファイルToolStripMenuItem";
-			this->ファイルToolStripMenuItem->Size = System::Drawing::Size(85, 22);
-			this->ファイルToolStripMenuItem->Text = L"ファイル(&F)";
-			this->ファイルToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::ファイルToolStripMenuItem_Click);
-			// 
-			// 開くOToolStripMenuItem
-			// 
-			this->開くOToolStripMenuItem->Name = L"開くOToolStripMenuItem";
-			this->開くOToolStripMenuItem->Size = System::Drawing::Size(190, 22);
-			this->開くOToolStripMenuItem->Text = L"開く(&O)";
-			// 
-			// 上書き保存SToolStripMenuItem
-			// 
-			this->上書き保存SToolStripMenuItem->Name = L"上書き保存SToolStripMenuItem";
-			this->上書き保存SToolStripMenuItem->Size = System::Drawing::Size(190, 22);
-			this->上書き保存SToolStripMenuItem->Text = L"上書き保存(&S)";
-			// 
-			// 名前をつけて保存AToolStripMenuItem
-			// 
-			this->名前をつけて保存AToolStripMenuItem->Name = L"名前をつけて保存AToolStripMenuItem";
-			this->名前をつけて保存AToolStripMenuItem->Size = System::Drawing::Size(190, 22);
-			this->名前をつけて保存AToolStripMenuItem->Text = L"名前をつけて保存(&A)";
-			// 
-			// 閉じるCToolStripMenuItem
-			// 
-			this->閉じるCToolStripMenuItem->Name = L"閉じるCToolStripMenuItem";
-			this->閉じるCToolStripMenuItem->Size = System::Drawing::Size(190, 22);
-			this->閉じるCToolStripMenuItem->Text = L"閉じる(&C)";
 			// 
 			// Form1
 			// 
