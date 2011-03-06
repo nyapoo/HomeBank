@@ -42,19 +42,27 @@ namespace HomeBank {
 			}
 		}
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
+	private: System::Windows::Forms::DateTimePicker^  dateCalendar;
 	protected: 
-	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
+
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::TextBox^  textBox1;
-	private: System::Windows::Forms::ListBox^  listBox1;
-	private: System::Windows::Forms::ComboBox^  comboBox1;
-	private: System::Windows::Forms::TextBox^  textBox2;
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::TextBox^  textName;
+	private: System::Windows::Forms::ListBox^  listMoney;
+
+
+	private: System::Windows::Forms::ComboBox^  comboKind;
+	private: System::Windows::Forms::TextBox^  textMoney;
+
+
+	private: System::Windows::Forms::Button^  buttonAdd;
+	private: System::Windows::Forms::Button^  buttonDelete;
+
+
 	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::TextBox^  textSum;
+
 
 	private:
 		/// <summary>
@@ -70,18 +78,18 @@ namespace HomeBank {
 		void InitializeComponent(void)
 		{
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->dateCalendar = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->textName = (gcnew System::Windows::Forms::TextBox());
+			this->listMoney = (gcnew System::Windows::Forms::ListBox());
+			this->comboKind = (gcnew System::Windows::Forms::ComboBox());
+			this->textMoney = (gcnew System::Windows::Forms::TextBox());
+			this->buttonAdd = (gcnew System::Windows::Forms::Button());
+			this->buttonDelete = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textSum = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -92,21 +100,21 @@ namespace HomeBank {
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// dateTimePicker1
+			// dateCalendar
 			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(12, 37);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(200, 19);
-			this->dateTimePicker1->TabIndex = 1;
+			this->dateCalendar->Location = System::Drawing::Point(12, 37);
+			this->dateCalendar->Name = L"dateCalendar";
+			this->dateCalendar->Size = System::Drawing::Size(200, 19);
+			this->dateCalendar->TabIndex = 1;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(10, 63);
+			this->label1->Location = System::Drawing::Point(10, 66);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(35, 12);
 			this->label1->TabIndex = 2;
-			this->label1->Text = L"label1";
+			this->label1->Text = L"品名：";
 			// 
 			// label2
 			// 
@@ -114,8 +122,8 @@ namespace HomeBank {
 			this->label2->Location = System::Drawing::Point(10, 88);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(35, 12);
-			this->label2->TabIndex = 3;
-			this->label2->Text = L"label2";
+			this->label2->TabIndex = 4;
+			this->label2->Text = L"分類：";
 			// 
 			// label3
 			// 
@@ -123,57 +131,57 @@ namespace HomeBank {
 			this->label3->Location = System::Drawing::Point(10, 115);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(35, 12);
-			this->label3->TabIndex = 4;
-			this->label3->Text = L"label3";
+			this->label3->TabIndex = 6;
+			this->label3->Text = L"金額：";
 			// 
-			// textBox1
+			// textName
 			// 
-			this->textBox1->Location = System::Drawing::Point(67, 63);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 19);
-			this->textBox1->TabIndex = 5;
+			this->textName->Location = System::Drawing::Point(67, 63);
+			this->textName->Name = L"textName";
+			this->textName->Size = System::Drawing::Size(145, 19);
+			this->textName->TabIndex = 3;
 			// 
-			// listBox1
+			// listMoney
 			// 
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 12;
-			this->listBox1->Location = System::Drawing::Point(242, 66);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(426, 196);
-			this->listBox1->TabIndex = 6;
+			this->listMoney->FormattingEnabled = true;
+			this->listMoney->ItemHeight = 12;
+			this->listMoney->Location = System::Drawing::Point(242, 66);
+			this->listMoney->Name = L"listMoney";
+			this->listMoney->Size = System::Drawing::Size(426, 196);
+			this->listMoney->TabIndex = 12;
 			// 
-			// comboBox1
+			// comboKind
 			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(67, 85);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 20);
-			this->comboBox1->TabIndex = 7;
+			this->comboKind->FormattingEnabled = true;
+			this->comboKind->Location = System::Drawing::Point(67, 85);
+			this->comboKind->Name = L"comboKind";
+			this->comboKind->Size = System::Drawing::Size(145, 20);
+			this->comboKind->TabIndex = 5;
 			// 
-			// textBox2
+			// textMoney
 			// 
-			this->textBox2->Location = System::Drawing::Point(67, 112);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 19);
-			this->textBox2->TabIndex = 8;
+			this->textMoney->Location = System::Drawing::Point(67, 112);
+			this->textMoney->Name = L"textMoney";
+			this->textMoney->Size = System::Drawing::Size(145, 19);
+			this->textMoney->TabIndex = 7;
 			// 
-			// button1
+			// buttonAdd
 			// 
-			this->button1->Location = System::Drawing::Point(67, 149);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 9;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
+			this->buttonAdd->Location = System::Drawing::Point(67, 149);
+			this->buttonAdd->Name = L"buttonAdd";
+			this->buttonAdd->Size = System::Drawing::Size(75, 23);
+			this->buttonAdd->TabIndex = 0;
+			this->buttonAdd->Text = L"button1";
+			this->buttonAdd->UseVisualStyleBackColor = true;
 			// 
-			// button2
+			// buttonDelete
 			// 
-			this->button2->Location = System::Drawing::Point(148, 149);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
-			this->button2->TabIndex = 10;
-			this->button2->Text = L"button2";
-			this->button2->UseVisualStyleBackColor = true;
+			this->buttonDelete->Location = System::Drawing::Point(148, 149);
+			this->buttonDelete->Name = L"buttonDelete";
+			this->buttonDelete->Size = System::Drawing::Size(75, 23);
+			this->buttonDelete->TabIndex = 9;
+			this->buttonDelete->Text = L"button2";
+			this->buttonDelete->UseVisualStyleBackColor = true;
 			// 
 			// label4
 			// 
@@ -181,42 +189,45 @@ namespace HomeBank {
 			this->label4->Location = System::Drawing::Point(240, 40);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(35, 12);
-			this->label4->TabIndex = 11;
-			this->label4->Text = L"label4";
+			this->label4->TabIndex = 10;
+			this->label4->Text = L"合計：";
 			// 
-			// textBox3
+			// textSum
 			// 
-			this->textBox3->Location = System::Drawing::Point(296, 37);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(100, 19);
-			this->textBox3->TabIndex = 12;
+			this->textSum->Location = System::Drawing::Point(296, 37);
+			this->textSum->Name = L"textSum";
+			this->textSum->Size = System::Drawing::Size(100, 19);
+			this->textSum->TabIndex = 11;
+			this->textSum->TextChanged += gcnew System::EventHandler(this, &Form1::textBox3_TextChanged);
 			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(778, 331);
-			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textSum);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->comboBox1);
-			this->Controls->Add(this->listBox1);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->buttonDelete);
+			this->Controls->Add(this->buttonAdd);
+			this->Controls->Add(this->textMoney);
+			this->Controls->Add(this->comboKind);
+			this->Controls->Add(this->listMoney);
+			this->Controls->Add(this->textName);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->dateTimePicker1);
+			this->Controls->Add(this->dateCalendar);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Form1";
-			this->Text = L"Form1";
+			this->Text = L"HomeBank";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void textBox3_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			 }
+};
 }
 
