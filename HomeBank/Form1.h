@@ -62,6 +62,20 @@ namespace HomeBank {
 
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::TextBox^  textSum;
+	private: System::Windows::Forms::ToolStripMenuItem^  ファイルToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  開くOToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  上書き保存SToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  名前をつけて保存AToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  閉じるCToolStripMenuItem;
+
+
+
+
+
+
+
+
+
 
 
 	private:
@@ -90,13 +104,20 @@ namespace HomeBank {
 			this->buttonDelete = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textSum = (gcnew System::Windows::Forms::TextBox());
+			this->ファイルToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->開くOToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->上書き保存SToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->名前をつけて保存AToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->閉じるCToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
 			// 
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) {this->ファイルToolStripMenuItem});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(778, 24);
+			this->menuStrip1->Size = System::Drawing::Size(778, 26);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -200,6 +221,39 @@ namespace HomeBank {
 			this->textSum->TabIndex = 11;
 			this->textSum->TextChanged += gcnew System::EventHandler(this, &Form1::textBox3_TextChanged);
 			// 
+			// ファイルToolStripMenuItem
+			// 
+			this->ファイルToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {this->開くOToolStripMenuItem, 
+				this->上書き保存SToolStripMenuItem, this->名前をつけて保存AToolStripMenuItem, this->閉じるCToolStripMenuItem});
+			this->ファイルToolStripMenuItem->Name = L"ファイルToolStripMenuItem";
+			this->ファイルToolStripMenuItem->Size = System::Drawing::Size(85, 22);
+			this->ファイルToolStripMenuItem->Text = L"ファイル(&F)";
+			this->ファイルToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::ファイルToolStripMenuItem_Click);
+			// 
+			// 開くOToolStripMenuItem
+			// 
+			this->開くOToolStripMenuItem->Name = L"開くOToolStripMenuItem";
+			this->開くOToolStripMenuItem->Size = System::Drawing::Size(190, 22);
+			this->開くOToolStripMenuItem->Text = L"開く(&O)";
+			// 
+			// 上書き保存SToolStripMenuItem
+			// 
+			this->上書き保存SToolStripMenuItem->Name = L"上書き保存SToolStripMenuItem";
+			this->上書き保存SToolStripMenuItem->Size = System::Drawing::Size(190, 22);
+			this->上書き保存SToolStripMenuItem->Text = L"上書き保存(&S)";
+			// 
+			// 名前をつけて保存AToolStripMenuItem
+			// 
+			this->名前をつけて保存AToolStripMenuItem->Name = L"名前をつけて保存AToolStripMenuItem";
+			this->名前をつけて保存AToolStripMenuItem->Size = System::Drawing::Size(190, 22);
+			this->名前をつけて保存AToolStripMenuItem->Text = L"名前をつけて保存(&A)";
+			// 
+			// 閉じるCToolStripMenuItem
+			// 
+			this->閉じるCToolStripMenuItem->Name = L"閉じるCToolStripMenuItem";
+			this->閉じるCToolStripMenuItem->Size = System::Drawing::Size(190, 22);
+			this->閉じるCToolStripMenuItem->Text = L"閉じる(&C)";
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
@@ -221,6 +275,8 @@ namespace HomeBank {
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Form1";
 			this->Text = L"HomeBank";
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -228,6 +284,8 @@ namespace HomeBank {
 #pragma endregion
 	private: System::Void textBox3_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 			 }
+private: System::Void ファイルToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
 };
 }
 
